@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# This is my first React app
+
+Its a comments Section page. A reusable react component for many projects.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
