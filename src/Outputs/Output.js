@@ -4,7 +4,10 @@ import "./output.css";
 const output = function (props) {
   return (
     <div className="output_component">
-      <p className="user">{props.name}</p>
+      <div className="output">
+        <p className="user">{props.name}</p>
+        <ion-icon onClick={props.delete} name="trash-outline"></ion-icon>
+      </div>
       <p className="text">{props.text}</p>
     </div>
   );

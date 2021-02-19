@@ -15,6 +15,7 @@ class App extends Component {
     this.state.comments.push({
       username: this.state.username,
       userInput: this.state.userInput,
+      id: this.state.userInput.slice(0, 3) + this.state.username.slice(0, 3),
     });
 
     this.setState({
@@ -36,8 +37,11 @@ class App extends Component {
     });
   };
 
-  formClearHandler = (e) => {
-    e.target.value = "";
+  deleteCommentHandler = (id) => {
+    const commentsArr = [...this.state.comments];
+    const commentIndex = commentsArr.findIndex((ele) => ele.id === id);
+    commentsArr.splice(commentIndex, 1);
+    this.setState({ comments: commentsArr });
   };
 
   render() {
@@ -48,7 +52,8 @@ class App extends Component {
           <Output
             name={ele.username}
             text={ele.userInput}
-            key={Math.ceil(Math.random() * 100000)}
+            key={ele.id}
+            delete={this.deleteCommentHandler.bind(this, ele.id)}
           />
         );
       });
@@ -60,7 +65,6 @@ class App extends Component {
           userInput={this.getUserInputHandler}
           username={this.getUsernameHandler}
           clicked={this.formSubmitHandler}
-          clear={this.formClearHandler}
           name={this.state.username}
           text={this.state.userInput}
         />
