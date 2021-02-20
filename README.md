@@ -1,6 +1,7 @@
 # This is my first React app
 
-Its a comments Section page. A reusable react component for many projects.
+Its a comments Section page. 
+Proect live at: <a href="https://primecomments.netlify.app/">primecomments.netlify.app</a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
