@@ -27,3 +27,15 @@
   border: transparent;
   outline: none;
 }
+
+@media screen and (max-width: 500px) {
+  .username {
+    width: 100%;
+  }
+  .para_input {
+    width: 100%;
+  }
+  .submit {
+    right: 0px;
+  }
+}
