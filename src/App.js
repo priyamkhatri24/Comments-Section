@@ -12,7 +12,8 @@ class App extends Component {
   };
 
   formSubmitHandler = (e) => {
-    this.state.comments.push({
+    const commentsArr = [...this.state.comments];
+    commentsArr.push({
       username: this.state.username,
       userInput: this.state.userInput,
       id: this.state.userInput.slice(0, 3) + this.state.username.slice(0, 3),
@@ -22,6 +23,7 @@ class App extends Component {
       submit: true,
       username: "",
       userInput: "",
+      comments: commentsArr,
     });
   };
 
@@ -45,6 +47,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this);
     let output = null;
     if (this.state.submit) {
       output = this.state.comments.map((ele) => {
